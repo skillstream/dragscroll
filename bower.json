@@ -1,10 +1,14 @@
 {
   "name": "dragscroll",
-  "version": "0.0.8",
-  "homepage": "https://github.com/asvd/dragscroll",
+  "version": "0.0.9",
+  "homepage": "https://github.com/skillstream/dragscroll",
   "authors": [
     "Dmitry Prokashev <heliosframework@gmail.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/skillstream/dragscroll"
+  },
   "description": "Tiny library for drag-n-drop scrolling style",
   "main": "dragscroll.js",
   "moduleType": [

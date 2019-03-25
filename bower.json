@@ -1,7 +1,11 @@
 {
   "name": "dragscroll",
-  "version": "0.0.8",
-  "homepage": "https://github.com/asvd/dragscroll",
+  "version": "1.0.0",
+  "homepage": "https://github.com/skillstream/dragscroll",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/skillstream/dragscroll.git"
+  },
   "authors": [
     "Dmitry Prokashev <heliosframework@gmail.com>"
   ],

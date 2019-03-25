@@ -1,6 +1,6 @@
 /**
  * @fileoverview dragscroll - scroll area by dragging
- * @version 0.0.8
+ * @version 1.0.0
  *
  * @license MIT, see http://github.com/asvd/dragscroll
  * @copyright 2015 asvd <heliosframework@gmail.com>

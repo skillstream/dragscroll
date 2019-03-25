@@ -1,11 +1,10 @@
 /**
  * @fileoverview dragscroll - scroll area by dragging
  * @version 0.0.8
- * 
+ *
  * @license MIT, see http://github.com/asvd/dragscroll
- * @copyright 2015 asvd <heliosframework@gmail.com> 
+ * @copyright 2015 asvd <heliosframework@gmail.com>
  */
-
 
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -43,11 +42,7 @@
                 (cont = el.container || el)[addEventListener](
                     mousedown,
                     cont.md = function(e) {
-                        if (!el.hasAttribute('nochilddrag') ||
-                            _document.elementFromPoint(
-                                e.pageX, e.pageY
-                            ) == cont
-                        ) {
+                        if (!el.hasAttribute('nochilddrag') || _document.elementFromPoint(e.pageX, e.pageY) == cont) {
                             pushed = 1;
                             lastClientX = e.clientX;
                             lastClientY = e.clientY;
@@ -80,7 +75,6 @@
         }
     }
 
-      
     if (_document.readyState == 'complete') {
         reset();
     } else {
@@ -89,4 +83,3 @@
 
     exports.reset = reset;
 }));
-

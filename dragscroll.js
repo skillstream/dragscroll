@@ -48,12 +48,16 @@
                             lastClientY = e.clientY;
 
                             e.preventDefault();
+                            e.target.style.cursor = 'grabbing';
                         }
                     }, 0
                 );
 
                 _window[addEventListener](
-                    mouseup, cont.mu = function() {pushed = 0;}, 0
+                    mouseup, cont.mu = function(e) {
+                        pushed = 0;
+                        e.target.style.cursor = 'grab';
+                    }, 0
                 );
 
                 _window[addEventListener](

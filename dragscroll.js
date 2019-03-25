@@ -42,6 +42,13 @@
                 (cont = el.container || el)[addEventListener](
                     mousedown,
                     cont.md = function(e) {
+                        // Returning as opposed to breaking to prevent dragging from occurring.
+                        // Modified from https://github.com/VarPDev/dragscroll/commit/08174ced3fd9c9602000d7b0541743487bb9c90d
+                        for (let i = 0; i < e.path.length; i++) {
+                            if (typeof e.path[i].hasAttribute === 'function' && e.path[i].hasAttribute('nodrag')) {
+                                return true;
+                            }
+                        }
                         if (!el.hasAttribute('nochilddrag') || _document.elementFromPoint(e.pageX, e.pageY) == cont) {
                             pushed = 1;
                             lastClientX = e.clientX;

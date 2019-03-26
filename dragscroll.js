@@ -42,11 +42,20 @@
                 (cont = el.container || el)[addEventListener](
                     mousedown,
                     cont.md = function(e) {
-                        // Return if the element or it's parent cannot be dragged.
+                        // Return if the target (of the mousedown event) or any of it's ancestors cannot be dragged.
                         // Ideally composedPath() would be used here but it's not supported by IE.
                         // https://stackoverflow.com/a/39245638
-                        if (e.target.hasAttribute('nodrag') || e.target.parentNode.hasAttribute('nodrag')) {
+                        var element = e.target;
+                        var elements = [];
+                        while (element) {
+                            elements.push(element);
+                            element = element.parentNode;
+                        }
+                        console.log(elements)
+                        for (j = 0; j < elements.length; j++) {
+                          if (typeof elements[j].hasAttribute === 'function' && elements[j].hasAttribute('nodrag')) {
                             return true;
+                          }
                         }
 
                         if (!el.hasAttribute('nochilddrag') || _document.elementFromPoint(e.pageX, e.pageY) == cont) {

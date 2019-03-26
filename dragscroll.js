@@ -44,8 +44,8 @@
                     cont.md = function(e) {
                         // Returning as opposed to breaking to prevent dragging from occurring.
                         // Modified from https://github.com/VarPDev/dragscroll/commit/08174ced3fd9c9602000d7b0541743487bb9c90d
-                        for (let i = 0; i < e.path.length; i++) {
-                            if (typeof e.path[i].hasAttribute === 'function' && e.path[i].hasAttribute('nodrag')) {
+                        for (j = 0; j < e.path.length; j++) {
+                            if (typeof e.path[j].hasAttribute === 'function' && e.path[j].hasAttribute('nodrag')) {
                                 return true;
                             }
                         }

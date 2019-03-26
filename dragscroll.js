@@ -42,13 +42,13 @@
                 (cont = el.container || el)[addEventListener](
                     mousedown,
                     cont.md = function(e) {
-                        // Returning as opposed to breaking to prevent dragging from occurring.
-                        // Modified from https://github.com/VarPDev/dragscroll/commit/08174ced3fd9c9602000d7b0541743487bb9c90d
-                        for (j = 0; j < e.path.length; j++) {
-                            if (typeof e.path[j].hasAttribute === 'function' && e.path[j].hasAttribute('nodrag')) {
-                                return true;
-                            }
+                        // Return if the element or it's parent cannot be dragged.
+                        // Ideally composedPath() would be used here but it's not supported by IE.
+                        // https://stackoverflow.com/a/39245638
+                        if (e.target.hasAttribute('nodrag') || e.target.parentNode.hasAttribute('nodrag')) {
+                            return true;
                         }
+
                         if (!el.hasAttribute('nochilddrag') || _document.elementFromPoint(e.pageX, e.pageY) == cont) {
                             pushed = 1;
                             lastClientX = e.clientX;

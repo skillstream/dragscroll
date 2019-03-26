@@ -51,7 +51,6 @@
                             elements.push(element);
                             element = element.parentNode;
                         }
-                        console.log(elements)
                         for (j = 0; j < elements.length; j++) {
                           if (typeof elements[j].hasAttribute === 'function' && elements[j].hasAttribute('nodrag')) {
                             return true;
